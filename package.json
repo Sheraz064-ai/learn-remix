@@ -6,7 +6,10 @@
     "build:css": "tailwindcss -o app/tailwind.css",
     "dev": "concurrently \"yarn dev:css\" \"remix dev\"",
     "dev:css": "tailwindcss -o app/tailwind.css --watch",
-    "start": "remix-serve build"
+    "start": "remix-serve build",
+    "lint": "eslint --fix",
+    "pretty": "prettier --write .",
+    "prepare": "husky install"
   },
   "dependencies": {
     "@remix-run/node": "^1.6.7",
@@ -20,14 +23,31 @@
     "@remix-run/eslint-config": "^1.6.7",
     "@types/react": "^17.0.47",
     "@types/react-dom": "^17.0.17",
+    "@typescript-eslint/eslint-plugin": "^5.32.0",
+    "@typescript-eslint/parser": "^5.32.0",
     "autoprefixer": "^10.4.8",
     "concurrently": "^7.3.0",
-    "eslint": "^8.20.0",
+    "eslint": "^7.32.0 || ^8.2.0",
+    "eslint-config-airbnb": "^19.0.4",
+    "eslint-plugin-import": "^2.25.3",
+    "eslint-plugin-jsx-a11y": "^6.5.1",
+    "eslint-plugin-prettier": "^4.2.1",
+    "eslint-plugin-react": "^7.28.0",
+    "eslint-plugin-react-hooks": "^4.3.0",
+    "husky": "^8.0.0",
+    "lint-staged": "^13.0.3",
     "postcss": "^8.4.16",
+    "prettier": "^2.7.1",
     "tailwindcss": "^3.1.8",
     "typescript": "^4.7.4"
   },
   "engines": {
     "node": ">=14"
+  },
+  "lint-staged": {
+    "**/*.{ts,tsx}": [
+      "yarn lint",
+      "prettier --write"
+    ]
   }
 }
