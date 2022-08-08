@@ -1,5 +1,5 @@
-import React from "react";
+import Root from "~/views/Root";
 
 export default function Index() {
-  return <div className="text-green-500	">Welcome to Index Page</div>;
+  return <Root />;
 }
