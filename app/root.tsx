@@ -16,7 +16,7 @@ import {
 import { useChangeLanguage } from "remix-i18next";
 import { useTranslation } from "react-i18next";
 import tailwindcss from "~/tailwind.css";
-import i18n from "~/api/i18n.server";
+import i18n from "~/api/i18n/i18n.server";
 import { I18nLoaderData } from "~/types/common.types";
 
 export const loader: LoaderFunction = async ({ request }) => {

@@ -5,7 +5,7 @@ import Backend from "i18next-fs-backend";
 import { resolve } from "node:path";
 import { renderToString } from "react-dom/server";
 import { I18nextProvider, initReactI18next } from "react-i18next";
-import i18n from "~/api/i18n.server";
+import i18n from "~/api/i18n/i18n.server";
 
 export default async function handleRequest(
   request: Request,
